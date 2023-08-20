@@ -19,6 +19,7 @@ function NewMessage() {
         message: messageText,
         id: Date.now(),
         idFrom,
+        status: 'content',
       };
       setNewMessage('');
       addMessage(message);

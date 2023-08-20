@@ -12,9 +12,12 @@ function MessagesWindow() {
   } = useUser();
 
   useEffect(() => {
+    audio.play();
+  }, [messages.length]);
+
+  useEffect(() => {
     const t = document.getElementById('mainChatWindow');
     t?.scrollTo(0, t?.scrollHeight);
-    audio.play();
   }, [messages]);
 
   return (

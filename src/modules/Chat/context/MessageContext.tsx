@@ -13,7 +13,12 @@ const MessageContext: FC<ICProps> = ({ children }) => {
 
   return (
     <ContextMessage.Provider
-      value={{ messages, addMessage, changeMessage, deleteMessage }}
+      value={{
+        messages,
+        addMessage,
+        changeMessage,
+        deleteMessage,
+      }}
     >
       {children}
     </ContextMessage.Provider>
