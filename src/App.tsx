@@ -8,8 +8,8 @@ function App() {
       style={{
         width: '50%',
         marginLeft: '25%',
-        height: '80vh',
-        marginTop: '10vh',
+        height: '90vh',
+        marginTop: '0',
         backgroundColor: 'blue',
         padding: '10px',
       }}

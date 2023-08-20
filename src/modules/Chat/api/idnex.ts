@@ -1,7 +1,8 @@
 import { IMessage } from '../assets/types';
+import { envs } from '../../../../envs';
 
 export const sendMessage = (body: IMessage) => {
-  return fetch('http://185.46.8.130/api/v1/chat/send-message', {
+  return fetch(envs.apiForBot, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

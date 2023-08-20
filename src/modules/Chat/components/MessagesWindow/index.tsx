@@ -1,27 +1,16 @@
-import React, { useEffect, useMemo } from 'react';
+import React from 'react';
 import { useMessage } from '../../context/hooks';
 import { useUser } from '../../../../context/UserContext/hooks';
 import Message from '../Message';
-import mp3 from '../../assets/mp3/send-message.mp3';
 
 function MessagesWindow() {
   const { messages } = useMessage();
-  const audio = useMemo(() => new Audio(mp3), []);
   const {
     user: { id: idUser },
   } = useUser();
 
-  useEffect(() => {
-    audio.play();
-  }, [messages.length]);
-
-  useEffect(() => {
-    const t = document.getElementById('mainChatWindow');
-    t?.scrollTo(0, t?.scrollHeight);
-  }, [messages]);
-
   return (
-    <div id="messagesWindow">
+    <div className="messagesWindow">
       {messages?.map((m, index) => (
         <Message
           message={m}

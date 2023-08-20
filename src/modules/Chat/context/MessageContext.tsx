@@ -6,10 +6,13 @@ import { useMessageActions } from './hooks';
 export const ContextMessage = React.createContext<any>(null);
 const MessageContext: FC<ICProps> = ({ children }) => {
   const [messages, setMessages] = useState<IMessage[]>([]);
-  const { addMessage, deleteMessage, changeMessage } = useMessageActions(
-    messages,
-    setMessages
-  );
+  const {
+    addMessage,
+    deleteMessage,
+    changeMessage,
+    stopSendingMessage,
+    countSended,
+  } = useMessageActions(messages, setMessages);
 
   return (
     <ContextMessage.Provider
@@ -18,6 +21,8 @@ const MessageContext: FC<ICProps> = ({ children }) => {
         addMessage,
         changeMessage,
         deleteMessage,
+        stopSendingMessage,
+        countSended,
       }}
     >
       {children}

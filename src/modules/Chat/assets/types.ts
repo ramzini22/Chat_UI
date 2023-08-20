@@ -1,6 +1,7 @@
+export type IStatus = 'done' | 'content';
 export interface IMessage {
   id: number;
   idFrom: number;
-  status: 'done' | 'content';
+  status: IStatus;
   message: string;
 }

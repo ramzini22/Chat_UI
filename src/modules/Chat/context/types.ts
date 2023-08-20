@@ -10,4 +10,6 @@ export type ICMessages = {
   addMessage: (message: IMessage) => void;
   changeMessage: (message: IMessage) => void;
   deleteMessage: (message: IMessage) => void;
+  stopSendingMessage: (id: number) => void;
+  countSended: number;
 };

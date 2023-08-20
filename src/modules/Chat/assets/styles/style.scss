@@ -13,7 +13,7 @@
     display: none;
   }
 
-  #messagesWindow{
+  .messagesWindow{
     background-color: white;
     border-radius: 16px;
     padding: 36px 19px 68px 19px;
@@ -21,31 +21,46 @@
     display: flex;
     flex-direction: column;
     gap:12px;
+    .messageAndButton {
+      .buttonStop{
+        width: 100%;
+        padding-bottom: 5px;
 
-    #message{
-      @keyframes slidein {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
+        button{
+          background-color: red;
+          color: wheat;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          padding: 5px;
         }
       }
-      display: flex;
-      gap: 13px;
+      .message {
+        @keyframes slidein {
+          from {
+            opacity: 0;
+          }
 
-      animation-duration: 0.5s;
-      animation-name: slidein;
-      #avatar{
-        min-width: 40px;
-        img{
-          width: 40px;
-          height: 40px;
+          to {
+            opacity: 1;
+          }
+        }
+        display: flex;
+        gap: 13px;
+
+        animation-duration: 0.5s;
+        animation-name: slidein;
+
+        .avatar {
+          min-width: 40px;
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
         }
       }
     }
-
     .messageInput{
       flex: 1;
       background-color: red;
@@ -64,12 +79,12 @@
     }
 
   }
-  #newMessageWindow{
+  .newMessageWindow{
     padding-top: 38px;
     position: sticky;
     bottom: 0;
 
-    #textMessageWindow{
+    .textMessageWindow{
       border-radius: 16px;
       background-color: white;
       padding: 20px 28px 20px 28px;
@@ -78,11 +93,11 @@
       gap:10px;
       height: calc(100% - 40px);
 
-      #textareaDiv{
+      .textareaDiv{
         flex: 1;
       }
 
-      #buttonClick{
+      .buttonClick{
         height: 100%;
         display: flex;
         padding-bottom: 20px;

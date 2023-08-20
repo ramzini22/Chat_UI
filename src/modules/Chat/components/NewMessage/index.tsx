@@ -19,7 +19,7 @@ function NewMessage() {
         message: messageText,
         id: Date.now(),
         idFrom,
-        status: 'content',
+        status: 'done',
       };
       setNewMessage('');
       addMessage(message);
@@ -32,9 +32,9 @@ function NewMessage() {
   }, [newMessage]);
 
   return (
-    <div id="newMessageWindow">
-      <div id="textMessageWindow">
-        <div id="textareaDiv">
+    <div className="newMessageWindow">
+      <div className="textMessageWindow">
+        <div className="textareaDiv">
           <Textarea
             value={newMessage}
             placeholder="Start typing here..."
@@ -43,7 +43,7 @@ function NewMessage() {
             onChange={(e) => setNewMessage(e.target.value)}
           />
         </div>
-        <div id="buttonClick">
+        <div className="buttonClick">
           <img src={icon} alt="icon" onClick={SendMessage} />
         </div>
       </div>
